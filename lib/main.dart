@@ -91,11 +91,12 @@ class _MyHomePageState extends State<MyHomePage> {
                               ),
                               Utils.vGap(10),
                               Text(
-                                  DateTime.fromMillisecondsSinceEpoch(
-                                      controller.tasks.value[index].date)
-                                      .toString(),
+                                  '${DateTime.fromMillisecondsSinceEpoch(
+                                      controller.tasks.value[index].date).day}-${DateTime.fromMillisecondsSinceEpoch(
+                                      controller.tasks.value[index].date).month}-${DateTime.fromMillisecondsSinceEpoch(
+                                      controller.tasks.value[index].date).year}',
                                   style: const TextStyle(
-                                      fontSize: 16, color: Colors.red)),
+                                      fontSize: 18, color: Colors.red)),
                             ],
                           ),
                         ),
@@ -122,7 +123,6 @@ class _MyHomePageState extends State<MyHomePage> {
                             CustomEButton(
                                 onTap: () {
                                   FireStore.deleteTask(controller.tasks.value[index].id);
-                                  controller.tasks.removeAt(index);
                                 },
                                 icon: Icons.delete,
                                 text: "Delete"),
