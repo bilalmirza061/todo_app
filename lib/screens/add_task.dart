@@ -96,7 +96,6 @@ class _AddTaskState extends State<AddTask> {
                       Utils.showError(context, "Please select date!");
                     } else {
 
-                      TaskController controller =Get.find<TaskController>(tag: 'cc');
 
                       if (widget.isEdit) {
                         widget.task!.title = _title.text;
